@@ -27,7 +27,6 @@ class Room {
     }
 
     checkIfWordExists(word){
-        console.log(this.socket0.words);
         if(this.socket0.words.indexOf(word) > -1){
             return true;
         }

@@ -9,14 +9,13 @@ const initSocket = (socket) => {
     socket.name = "";
     socket.words = [];
     socket.roomCode = "";
-    console.log("New player has joined");
+
 }
 
 /*  Remove the corresponding socket from the list upon disconnection   */
 const deleteSocket = (socket) => {
     leaveRoom(socket);
-    console.log(roomsList.length);
-    console.log("Removed a client's socket");
+
 }
 
 /*  Room's code is randomly generated and it is checked to prevent duplicates. 
@@ -42,7 +41,6 @@ const joinRoom = (socket, msg) => {
 
     let { name, code } = msg;
     let i = getRoomIndex(code);
-    console.log(i)
     if (i === -1) {
         res.name.push("Does not exist");
         return res;  // Room code does not exist
@@ -51,7 +49,7 @@ const joinRoom = (socket, msg) => {
         return res;
     }
 
-    console.log(roomsList[i].getNames())
+
     if (roomsList[i].getNames().map(socket => socket ? socket.name : null).some(nameInRoom => nameInRoom === name)) {
         res.name.push("Existing user in lobby")
         return res;
@@ -67,7 +65,6 @@ const joinRoom = (socket, msg) => {
 
     socket.to(code).emit("new player", res.name);   // Send a notification to players in the room
 
-    console.log("A player has connected with another player")
 
     return res;
 }

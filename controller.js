@@ -94,7 +94,9 @@ const endGame = (socket, name) => {
     let words1 = roomsList[i].socket1.words;
     socket.to(socket.roomCode).emit("game end", name)
     socket.emit("game end", name)
-    addGame(name, socket.name, roomsList[i].socket1.name, roomsList[i].round, words0, words1);
+    addGame(name, roomsList[i].socket0.name, roomsList[i].socket1.name, roomsList[i].round, words0, words1);
+    leaveRoom(roomsList[i].socket1);
+    leaveRoom(roomsList[i].socket0);
 }
 
 /*  Start game by distrubing hands to sockets and returning which socket to start   */

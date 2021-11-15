@@ -1,0 +1,30 @@
+{
+  "name": "CSSE490Shiritori",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/racheljiezhang/CSSE490Shiritori.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/racheljiezhang/CSSE490Shiritori/issues"
+  },
+  "homepage": "https://github.com/racheljiezhang/CSSE490Shiritori#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.12",
+    "nodemon": "^2.0.15",
+    "socket.io": "^4.3.2"
+  }
+}

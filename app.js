@@ -5,7 +5,7 @@ const controller = require("./controller");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 
-const port = process.env.port || 8001;
+const port = process.env.PORT || 8001;
 const router = express.Router();
 
 var app = express();
